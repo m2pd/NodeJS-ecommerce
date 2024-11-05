@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
@@ -11,8 +12,8 @@ app.use(compression());
 
 //init db
 require('./dbs/init.mongodb');
-const { checkOverload } = require('./helpers/check.connect');
-checkOverload();
+// const { checkOverload } = require('./helpers/check.connect');
+// checkOverload();
 //init router
 app.get('/', (req, res, next) => {
   const strCompress = 'Hello FanTipJS';
